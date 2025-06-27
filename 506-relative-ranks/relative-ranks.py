@@ -1,10 +1,31 @@
 class Solution:
     def findRelativeRanks(self, score: List[int]) -> List[str]:
-        sorted_scores = sorted(score, reverse=True)
-        ranks = {sorted_scores[i]: str(i + 1) for i in range(len(score))}
-        ranks[sorted_scores[0]] = "Gold Medal"
-        if len(score) > 1:
-            ranks[sorted_scores[1]] = "Silver Medal"
-        if len(score) > 2:
-            ranks[sorted_scores[2]] = "Bronze Medal"
-        return [ranks[s] for s in score]
+        n = len(score)
+        result = [""] * n
+        score_copy = []
+        
+        # Store original indices
+        for i in range(n):
+            score_copy.append((score[i], i))
+        
+        # Simple sort: bubble sort for beginner clarity (not efficient but educational)
+        for i in range(n):
+            for j in range(i + 1, n):
+                if score_copy[i][0] < score_copy[j][0]:
+                    temp = score_copy[i]
+                    score_copy[i] = score_copy[j]
+                    score_copy[j] = temp
+        
+        # Assign ranks
+        for i in range(n):
+            index = score_copy[i][1]
+            if i == 0:
+                result[index] = "Gold Medal"
+            elif i == 1:
+                result[index] = "Silver Medal"
+            elif i == 2:
+                result[index] = "Bronze Medal"
+            else:
+                result[index] = str(i + 1)
+        
+        return result
