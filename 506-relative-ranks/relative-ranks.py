@@ -3,20 +3,14 @@ class Solution:
         n = len(score)
         result = [""] * n
         score_copy = []
-        
-        # Store original indices
         for i in range(n):
             score_copy.append((score[i], i))
-        
-        # Simple sort: bubble sort for beginner clarity (not efficient but educational)
         for i in range(n):
             for j in range(i + 1, n):
                 if score_copy[i][0] < score_copy[j][0]:
                     temp = score_copy[i]
                     score_copy[i] = score_copy[j]
                     score_copy[j] = temp
-        
-        # Assign ranks
         for i in range(n):
             index = score_copy[i][1]
             if i == 0:
@@ -27,5 +21,4 @@ class Solution:
                 result[index] = "Bronze Medal"
             else:
                 result[index] = str(i + 1)
-        
         return result
