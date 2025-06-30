@@ -2,7 +2,8 @@ class Solution:
     def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
         num_rows=len(mat)
         num_cols=len(mat[0])
-        
+        if num_rows==0:
+            return []
         diagonals=[[] for _ in range(num_rows + num_cols - 1)]
 
         for i in range(num_rows):
