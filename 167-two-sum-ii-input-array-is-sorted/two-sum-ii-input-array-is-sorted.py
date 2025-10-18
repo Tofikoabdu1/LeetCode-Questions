@@ -8,5 +8,7 @@ class Solution:
                 l+=1
             elif s > target:
                 r-=1
-            else:return[l+1 , r+1]
+            else:
+                return[l+1 , r+1]
+        
 
