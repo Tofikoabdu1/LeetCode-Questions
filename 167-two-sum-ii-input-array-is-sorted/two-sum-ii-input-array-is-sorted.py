@@ -9,6 +9,6 @@ class Solution:
             elif s > target:
                 r-=1
             else:
-                break
-        return[l+1 , r+1]
+                return[l+1 , r+1]
+        
 
