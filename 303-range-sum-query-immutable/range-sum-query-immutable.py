@@ -12,7 +12,6 @@ class NumArray:
         # for i in range(left , right+1):
         #     res+=self.nums[i]
         # return res
-        # print(self.prefix)
         return self.prefix[right+1]-self.prefix[left]
 
 
