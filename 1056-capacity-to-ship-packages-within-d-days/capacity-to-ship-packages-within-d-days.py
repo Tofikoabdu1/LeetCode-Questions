@@ -1,6 +1,6 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-        def canShip(capacity: int) -> bool:
+        def check(capacity):
             current_weight = 0
             required_days = 1
             for weight in weights:
@@ -16,7 +16,7 @@ class Solution:
 
         while low <= high:
             mid = (low + high) // 2
-            if canShip(mid):
+            if check(mid):
                 result = mid
                 high = mid - 1
             else:
