@@ -7,8 +7,6 @@ class Solution:
             if nums[seek]!=val:
                 nums[seek],nums[hold]=nums[hold],nums[seek]
                 hold+=1
-            # elif nums[seek]==val:
-            #     occur+=1
             seek+=1
         return len(nums)-occur
 
