@@ -1,17 +1,20 @@
 class Solution:
     def dividePlayers(self, skill: List[int]) -> int:
+
+
         skill.sort()
-        left=0
-        right=len(skill)-1
-        sample = skill[0]+skill[right]
+        n = len(skill)
+        left = 0
+        right = n-1
+        verify = skill[0]+skill[n-1]
         chem = 0
-        while left < right:
-            temp = skill[left]+skill[right]
-            if temp != sample:
+        while left < right :
+            if skill[left]+skill[right] != verify:
                 return -1
-            else:
-                x = skill[left]*skill[right]
-                chem+=x
-                left+=1
-                right-=1
+            chem += (skill[left]*skill[right])
+            left+=1
+            right-=1
+        
         return chem
+
+
