@@ -13,8 +13,11 @@ class Solution:
                 if s == (-1*nums[i]):
                     ans.append([nums[i],nums[L],nums[R]])
                     L += 1
+                    R -= 1
                     while nums[L] == nums[L-1] and L < R:
                         L+=1
+                    while nums[R] == nums[R+1] and L < R:
+                        R-=1
                 elif s < (-1*nums[i]):
                     L += 1
                 else:
