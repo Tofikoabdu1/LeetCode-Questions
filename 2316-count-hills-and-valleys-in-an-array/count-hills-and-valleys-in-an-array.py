@@ -7,8 +7,8 @@ class Solution:
         nums = arr    
         count =0
         for i in range(1,len(arr)-1):
-            if nums[i-1]<nums[i] and nums[i]>nums[i+1]:
+            if nums[i-1]<nums[i] and nums[i]>nums[i+1] or nums[i-1]>nums[i] and nums[i]<nums[i+1]:
                 count+=1
-            elif  nums[i-1]>nums[i] and nums[i]<nums[i+1]:
-                count +=1
+            # elif  nums[i-1]>nums[i] and nums[i]<nums[i+1]:
+            #     count +=1
         return count
