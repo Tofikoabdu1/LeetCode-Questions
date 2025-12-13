@@ -6,5 +6,4 @@ class Solution:
             while stack and num > temperatures[stack[-1]]:
                 res[stack.pop()] = i - stack[-1]
             stack.append(i)
-            
         return res
