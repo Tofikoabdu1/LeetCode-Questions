@@ -4,7 +4,7 @@ class Solution:
         stack = []
         for c in s:
             if c in mapping.keys():
-                if stack and stack[-1] == mapping[c]:
+                if len(stack) > 0 and stack[-1] == mapping[c] :
                     stack.pop()
                 else:
                     return False
@@ -14,4 +14,3 @@ class Solution:
             return False
         else:
             return True
-        
