@@ -3,10 +3,10 @@ class Solution:
         num = ""
         for i in digits:
             num+=str(i)
-        x = int(num)
-        x+=1
-        y=str(x)
-        l =[]
-        for c in y:
-            l.append(int(c))
-        return l
+        num_int = int(num)
+        num_int += 1
+        num_str = str(num_int)
+        ans =[]
+        for c in num_str:
+            ans.append(int(c))
+        return ans
