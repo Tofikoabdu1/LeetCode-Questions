@@ -3,8 +3,6 @@ class Solution:
         if x < 0:
             return False
         y=str(x)
-        # if len(y)%2 == 0:
-        #     return False
         l=0
         r=len(y)-1
         while l < r:
