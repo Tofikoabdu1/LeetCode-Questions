@@ -8,7 +8,8 @@ class Solution:
             # print(files)
             for f in files:
                 name , content = f.split(".txt")
-                p = path + "/" + name + ".txt"
+                # p = path + "/" + name + ".txt"
+                p = f"{path}/{name}.txt"
                 c[content].append(p)
             res = []
             for k , val in c.items():
