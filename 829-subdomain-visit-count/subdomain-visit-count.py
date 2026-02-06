@@ -15,8 +15,5 @@ class Solution:
             for i in do:
                 c[i]+=int(rep)
         # print(c)
-        res = []
-        for k , v in c.items():
-            res.append(f"{v} {k}")
-        return res
+        return [f"{v} {k}"  for k , v in c.items()]
         
