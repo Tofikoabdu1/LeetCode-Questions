@@ -4,7 +4,7 @@ class Solution:
         v = list(c.values())
         v.sort()
         # print(v)
-        max_val = set(v[-k:])
+        max_val = v[-k:]
         # print(max_val)
         res = []
         for k , val in c.items():
