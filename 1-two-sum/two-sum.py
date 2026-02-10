@@ -1,11 +1,20 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # l=len(nums)
-        # for i in range(l):
-        #     for j in range(i+1,l):
-        #         if nums[i]+nums[j]==target:
-        #             return [i,j]
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i]+nums[j]==target:
-                    return [i,j]
+        d = defaultdict(list)
+        for idx , value in enumerate(nums):
+            d[value].append(idx)
+        print(d)
+        nums.sort()
+        left = 0
+        right = len(nums) -1
+        while left < right:
+            temp = nums[left] + nums[right]
+            if temp < target:
+                left+=1
+            elif temp > target:
+                right -=1
+            else:
+                if nums[left] == nums[right]:
+                    return [d[nums[left]][0] ,d[nums[right]][1]]
+                return [d[nums[left]][0] ,d[nums[right]][0]]
+        
