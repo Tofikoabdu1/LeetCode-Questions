@@ -4,11 +4,13 @@ class Solution:
         right = len(height)-1
         res = 0
         while left < right:
-            curr = (right-left)*min(height[left],height[right])
+            curr = (right - left)*min(height[left],height[right])
             res = max(res , curr)
-            if height[left]>height[right]:
-                right -=1
+            if height[left] > height[right]:
+                right -= 1
             else:
-                left+=1
+                left += 1
         return res
+
+
              
