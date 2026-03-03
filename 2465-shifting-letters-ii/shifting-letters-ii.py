@@ -16,10 +16,8 @@ class Solution:
         for i in range(1,len(s)):
             pref.append(pref[-1]+l[i])
         chars = [ord(i)-ord('a') for i in s]
-
         for i in range(len(chars)):
             x =chars[i]+pref[i]
-          
             chars[i] = x%26
         print(chars)
         let = [d[i] for i in chars]
