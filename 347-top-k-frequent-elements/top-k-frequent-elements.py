@@ -1,13 +1,7 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        c = Counter(nums)
-        v = list(c.values())
-        v.sort()
-        # print(v)
-        max_val = v[-k:]
-        # print(max_val)
-        res = []
-        for k , val in c.items():
-            if val in max_val:
-                res.append(k)
-        return res
+        count = Counter(nums)
+        val = list(count.values())
+        val.sort()
+        max_val = set(val[-k:])
+        return [key for key , val in count.items() if val in max_val ]
